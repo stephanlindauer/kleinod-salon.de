@@ -55,7 +55,7 @@
 		<div id="navigation">
 			<img class="logo" src="/img/logo.png">
 			<ul>
-				<li class="label active" data-section="about">
+				<li class="label" data-section="about">
 					<a data-scroll href="#about">&Uuml;ber uns</a>
 				</li>
 				<li class="label" data-section="products">
@@ -84,7 +84,7 @@
 
 		<div class="mobile-nav closed">
 			<ul>
-				<li class="label active" data-section="about">
+				<li class="label" data-section="about">
 					<a data-scroll href="#about">&Uuml;ber uns</a>
 				</li>
 				<li class="label" data-section="products">
@@ -122,13 +122,21 @@
 			$('#nav-icon3').click(function() {
 				$(".mobile-nav").toggleClass('closed');
 			});
+
 			$('.label').click(function() {
 				$('.label').removeClass("active");
-
 				$('.label[data-section=' + $(this).data("section") + "]")
 					.addClass("active");
-
+				$(".mobile-nav").addClass('closed');
 			});
+			if (window.location.hash) {
+				$('.label').removeClass("active");
+				$('.label[data-section=' + window.location.hash.replace('#', '') + "]")
+					.addClass("active");
+			} else {
+				$(".label[data-section=about]")
+					.addClass("active");
+			}
 		});
 	</script>
 </body>
