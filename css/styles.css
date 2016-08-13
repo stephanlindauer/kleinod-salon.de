@@ -15,9 +15,9 @@ body {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     background-color: rgba(15, 15, 15, .9);
-    -webkit-box-shadow: 0px -9px 45px 19px rgba(0, 0, 0, 0.75);
+    /*-webkit-box-shadow: 0px -9px 45px 19px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px -9px 45px 19px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px -9px 45px 19px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px -9px 45px 19px rgba(0, 0, 0, 0.75);*/
     max-width: 860px;
     margin: 0 auto;
     position: relative;
@@ -67,7 +67,7 @@ body {
     transition: all ease-out .2s;
     font-weight: 500;
 }
-#navigation ul li a.active {
+#navigation ul li.active a {
     background-color: rgba(200, 200, 200, 0.4);
     color: rgb(255, 255, 255);
 }
@@ -181,8 +181,65 @@ body {
     width: 0%;
     left: 50%;
 }
-@media (min-width: 620px) {
+@media (min-width: 621px) {
     #nav-icon3 {
-        display: none !important;
+        display: none;
     }
+}
+@media (min-width: 621px) {
+    .mobile-nav {
+        display: none;
+    }
+}
+.mobile-nav {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+}
+.mobile-nav ul {
+    overflow: hidden;
+    padding-top: 0px;
+    margin-top: 5px;
+    width: 100%;
+    border-radius: 3px;
+    float: right;
+    transition: all ease-out .2s;
+}
+.mobile-nav ul li {
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    -webkit-transition: all ease-out .2s;
+    transition: all ease-out .2s;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+    ;
+}
+.mobile-nav.closed ul li a{
+  transition: all ease-out .2s;
+  width: 0%;
+  margin-right: -200px;
+}
+.mobile-nav ul li a {    overflow: hidden;
+    background-color: rgba(15, 15, 15, .9);
+    float: right;
+    border-radius: 3px;
+    width: auto;
+    text-decoration: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /*background-color: red;*/
+    font-size: 28px;
+    width: 100%;
+    color: rgba(255, 255, 255, .7);
+    -webkit-transition: all ease-out .2s;
+    transition: all ease-out .2s;
+}
+.mobile-nav ul li.active a {
+    background-color: rgba(200, 200, 200, 0.4);
+}
+.mobile-nav ul li.icon {
+    width: auto;
 }

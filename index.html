@@ -4,7 +4,6 @@
 <head>
 	<meta charset="utf-8" />
 	<title itemprop="name">Kleinod Salon</title>
-	<meta name="author" href="/humans.txt" content="stephan lindauer" />
 
 	<meta name="description" itemprop="description" content="Kleinod Salon Friseur" />
 	<meta name="keywords" content="Verena Lindauer, Sarah-Juliane Kadler, Friseursalon, Prenzlauer Berg, Berlin" />
@@ -56,16 +55,16 @@
 		<div id="navigation">
 			<img class="logo" src="/img/logo.png">
 			<ul>
-				<li class="label">
-					<a data-scroll href="#about" class="active">&Uuml;ber uns</a>
+				<li class="label active" data-section="about">
+					<a data-scroll href="#about">&Uuml;ber uns</a>
 				</li>
-				<li class="label">
+				<li class="label" data-section="products">
 					<a data-scroll href="#products">Produkte</a>
 				</li>
-				<li class="label">
+				<li class="label" data-section="prices">
 					<a data-scroll href="#prices">Preise</a>
 				</li>
-				<li class="label">
+				<li class="label" data-section="contact">
 					<a data-scroll href="#contact">Kontakt</a>
 				</li>
 				<li class="icon">
@@ -82,6 +81,25 @@
 				<span></span>
 			</div>
 		</div>
+
+		<div class="mobile-nav closed">
+			<ul>
+				<li class="label active" data-section="about">
+					<a data-scroll href="#about">&Uuml;ber uns</a>
+				</li>
+				<li class="label" data-section="products">
+					<a data-scroll href="#products">Produkte</a>
+				</li>
+				<li class="label" data-section="prices">
+					<a data-scroll href="#prices">Preise</a>
+				</li>
+				<li class="label" data-section="contact">
+					<a data-scroll href="#contact">Kontakt</a>
+				</li>
+			</ul>
+		</div>
+
+
 	</header>
 
 	<div class="page" id="about">
@@ -100,9 +118,16 @@
 	<script src="/js/jquery.js"></script>
 	<script>
 		smoothScroll.init();
-		$(document).ready(function(){
-			$('#nav-icon3').click(function(){
-				$(this).toggleClass('open');
+		$(document).ready(function() {
+			$('#nav-icon3').click(function() {
+				$(".mobile-nav").toggleClass('closed');
+			});
+			$('.label').click(function() {
+				$('.label').removeClass("active");
+
+				$('.label[data-section=' + $(this).data("section") + "]")
+					.addClass("active");
+
 			});
 		});
 	</script>
