@@ -15,39 +15,52 @@ body {
 #header #navigation {
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: baseline;
+    justify-content: space-between;
 }
 #header #navigation .logo {
     display: inline-block;
+    margin: 5px;
 }
 #header #navigation ul {
-    list-style: none;
-    display: inline-block;
+    position: absolute;
+    margin-bottom: 0;
     bottom: 0;
+    right: 0;
+    margin-right: 10px;
 }
-#header #navigation li {
+#header #navigation ul li {
     display: block;
+    margin-right: 10px;
+    vertical-align: top;
     float: left;
 }
-#navigation ul li a.active {
+#navigation ul li a {
+    padding: 14px;
+    text-decoration: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    bottom: 0;
+    display: inline-block;
+    color: rgba(255, 255, 255, .7);
+    -webkit-transition: all ease-out .2s;
+    transition: all ease-out .2s;
     font-weight: 500;
-    border-bottom-color: #fff;
+}
+#navigation ul li a.active {
+    color: #fff;
+    color: rgba(255, 255, 255, .7);
+}
+#navigation ul li a:hover {
+    font-weight: 500;
+    color: rgba(255, 255, 255, .7);
+    background-color: #fff;
     color: #fff;
 }
 #navigation ul li a img {
     position: relative;
-    top: .125em;
-    width: 1em;
-    height: auto;
-}
-#header ul li a {
-    display: block;
-    padding: 0 1em;
-    color: rgba(255, 255, 255, .7);
-    border-bottom: 2px solid transparent;
-    -webkit-transition: all ease-out .2s;
-    transition: all ease-out .2s;
+    height: 14px;
 }
 .page {
     background-size: cover;
