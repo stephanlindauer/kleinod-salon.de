@@ -75,11 +75,19 @@
 					<a class="instagram" href="https://www.instagram.com/kleinodsalon" target="_blank"><img alt="Instagram" src="/img/social-instagram.svg" width="32" height="32"></a>
 				</li>
 			</ul>
+			<div class="hamburger-icon" id="nav-icon3">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
 		</div>
 	</header>
 
 	<div class="page" id="about">
-		<a href="#team" class="btn btn-circle page-scroll"><i class="fa fa-angle-double-down animated"></i></a>
+		<div class="content">
+			miau
+		</div>
 	</div>
 	<div class="page" id="products">
 	</div>
@@ -89,8 +97,14 @@
 	</div>
 
 	<script src="/js/smooth-scroll.js"></script>
+	<script src="/js/jquery.js"></script>
 	<script>
-	smoothScroll.init();
+		smoothScroll.init();
+		$(document).ready(function(){
+			$('#nav-icon3').click(function(){
+				$(this).toggleClass('open');
+			});
+		});
 	</script>
 </body>
 
